@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        <%= locals.title%>
+    </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!--Our css at the last to override any other element style from fontawesome stylesheet or any other stylesheet being used-->
+    <link rel="stylesheet" href="/css/home.css">
+    
+</head>
+<body>
+    <main>
+        <header>
+            <div class="heading-container">
+                <i class="fas fa-address-book"></i>
+                <h1 id="page-heading">Contacts</h1>
+            </div>
+        </header>
+        <hr>
+        <div class = "contacts-list-container">
+            <ul>
+                <% for(let i of contact_list){ %>
+                    <li >
+                        <div class="list-item">
+                            <i class="fas fa-user-circle"></i>
+                            <p><%= i.name%></p>
+                            <p><%= i.phone%></p>
+                                <!-- This is for Query params -->
+                            <!-- <a href="/delete-contact/?phone=<%= i.phone%>&name=<%= i.name%>" > -->
+                                <!-- This is for String params -->
+                            <!-- <a href="/delete-contact/<%= i.phone%>" > --> 
+                                <!-- This is query params for database -->
+                            <a href="/delete-contact/?id=<%= i._id%>" >
+                                <ion-icon class="delete-icon mg-10 md hydrated" name="close-circle-outline" role="img" aria-label="close circle outline" style="visibility:hidden;"></ion-icon>
+                            </a>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+        <form action="/create-contact" method="POST">
+            <input id ="name-input" type="text" name ="name" placeholder="Name" required>
+            <input id="phone-input" type="number" name="phone" placeholder="Number" required>
+            <button type="submit">Add Contact</button>
+        </form>
+    </main>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="text/javascript" src="/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+body{
+        margin:0;
+        font-family: monospace;
+        background-color:rgb(125, 205, 241);
+        letter-spacing: 0.05rem;
+}
+main{
+    background-color: white;
+    width:50vw;
+    margin:30px auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow: 0px 0px 4px 4px gray;
+    overflow: hidden;
+}
+ul{
+    list-style: none;
+}
+.list-item{
+    display:flex;
+    /* justify-content: space-around; */
+    align-items: baseline;
+}
+.list-item:hover{
+    font-size:1rem;
+}
+.list-item>p{
+    width:50%;
+    margin:10px 10px;
+}
+.list-item a{
+    color:black;
+}
+.deleted{
+    transform: translateX(100%);
+    transition: all 0.4s ease-out; 
+}
+.heading-container{
+    display:flex;
+    align-items: baseline;
+    justify-content: center;
+}
+#page-heading{
+    /* text-align: center; */
+    margin:5px;
+    color:gray;
+}
+form{
+    font-family: monospace;
+    letter-spacing: 0.1rem;
+    display:flex;
+    justify-content: space-around;      
+}
+
+input{
+    border:none;
+    border-bottom:2px solid rgb(90, 192, 240);
+    padding:10px;
+    font-size: 0.9em;
+    border-radius:2px;
+    font-family: monospace;
+    letter-spacing: 0.1em;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline:none;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+button{
+    /* font-size: 1rem; */
+    background-color: rgb(243, 108, 54);
+    border:none;
+    border-radius:5px;
+    color:whitesmoke;
+    padding:10px;
+    font-size: 0.9em;
+    font-family: monospace;
+    letter-spacing: 0.1em;
+}
+#delete-button{
+    background-color: rgb(214, 57, 57);
+}
+@media screen and (max-width:700px){
+	main{
+        width:80vw;
+    }
+}
